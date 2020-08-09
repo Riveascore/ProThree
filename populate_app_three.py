@@ -1,6 +1,6 @@
 import os
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AppThree.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ProThree.settings')
 
 import django
 
@@ -14,8 +14,8 @@ from faker import Faker
 fakegen = Faker()
 
 def add_user():
-  firstname = fakegen.name()
-  lastname = fakegen.name()
+  firstname = fakegen.first_name()
+  lastname = fakegen.last_name()
   user = User.objects.get_or_create(firstname=firstname, lastname=lastname)
 
   return user

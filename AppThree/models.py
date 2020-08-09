@@ -5,3 +5,6 @@ class User(models.Model):
   firstname = models.CharField(max_length=26)
   lastname = models.CharField(max_length=26)
   email = models.EmailField(max_length=64)
+
+  def __str__(self):
+    return f"{self.firstname} {self.lastname}"
