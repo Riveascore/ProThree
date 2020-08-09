@@ -16,7 +16,8 @@ fakegen = Faker()
 def add_user():
   firstname = fakegen.first_name()
   lastname = fakegen.last_name()
-  user = User.objects.get_or_create(firstname=firstname, lastname=lastname)
+  email = fakegen.email()
+  user = User.objects.get_or_create(firstname=firstname, lastname=lastname, email=email)
 
   return user
 

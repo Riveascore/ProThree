@@ -1,0 +1,44 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users List</title>
+</head>
+<body>
+  <h1>Users</h1>
+
+  {% if users %}
+    <table>
+      <thead>
+        <th>
+          firstname
+        </th>
+        <th>
+          lastname
+        </th>
+        <th>
+          email
+        </th>
+      </thead>
+      <tbody>
+        {% for user in users %}
+          <tr>
+            <td>
+              {{ user.firstname }}
+            </td>
+            <td>
+              {{ user.lastname }}
+            </td>
+            <td>
+              {{ user.email }}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No users variable 💔</p>
+  {% endif %}
+</body>
+</html>
